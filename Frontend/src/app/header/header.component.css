@@ -1,0 +1,24 @@
+ul{
+    background-color:#29d4b7;
+    margin-bottom: 10px;
+
+    
+}
+
+a:hover{
+    color:#29d4b7;
+    
+    background-color:black;
+    
+    
+}
+/* .nav-link:hover{
+    color: rgb(170, 46, 56);
+    
+} */
+
+a{
+    color:black;
+    font-size: medium;
+    font-weight: bold;
+}

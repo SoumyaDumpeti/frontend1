@@ -1,0 +1,75 @@
+@if(status===true){
+    @if(isUser){
+      <div class="container">
+        <p class="h3" > Hi {{user}}, Welcome to the world of Cinema</p>   
+      </div>
+  
+    }
+    
+  
+  }
+  
+      <div class="row">
+    
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3 pt-5" *ngFor="let movie of movies">
+         
+          <div class="card p-100 d-flex flex-column" height="500px" style="width: 18rem; border-radius: 3px; margin: 5%;">
+              @if(status===true){
+                <img [src]="movie.image" class="card-img-top"  alt="movie Image" height="530px" width="25px" >
+               <h5 class="card-title mt-2" style="text-align:center;">{{ movie.movieName }}</h5>
+                
+                @if(!isUser){
+                   <div class="container">
+                    <div class="row">
+                      <div class="col">
+                        <button  class="update-btn "  (click)="openForm(movie.movieName)">Update Status</button>
+  
+                      </div>
+                      <div class="col">
+                        <button  class="dlt" (click)="deleteMovie(movie.movieName)">Delete</button>
+                      </div>
+  
+                    </div>
+  
+                   </div>
+                    
+                   
+  
+                   
+      
+                 }@else{
+                  <button class="my-2 book" (click)="bookTicket(movie.movieName)">Book Now</button>
+  
+                 }
+  
+              }@else{
+                <img [src]="movie.image" class="card-img-top" (click)="login()" alt="movie Image" style="cursor: pointer;" height="530px" width="25px" >
+              <h5 class="card-title mt-2" style="text-align:center;">{{ movie.movieName }}</h5>
+              }
+           
+  
+              
+            </div>
+            
+          </div>
+        </div>
+   
+  
+  
+  
+       
+  
+  <div class="popup card"  *ngIf="isPopupOpen">
+    <div  class="popup-content">
+      
+    
+    <h3>Update ticket status</h3>
+    <form (ngSubmit)="update()">
+      <label class="form-label" for="num"><b>Number of Tickets</b></label>
+      <input id="num" type="number" class="form-control" [(ngModel)]="numberOfTickets">
+      <button type="submit" class="submit-btn">Update</button>
+    
+    </form>
+    <button type="button" class="close-btn" (click)="closeForm()">Close</button>
+    </div>
+  </div>

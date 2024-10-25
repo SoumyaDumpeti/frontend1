@@ -1,0 +1,40 @@
+<div class="fluid-container card mx-auto" style="width: 40rem; height: 30rem;">
+    <p class="display-6 text-center" style="font-weight: 600;" >LOGIN</p>
+  
+    <div *ngIf="userCredentialsError.userCredErrStatus" class="text-danger fs-3 text-center mb-3">
+        {{userCredentialsError.userCredErrMsg}}
+    </div>
+  
+    <form class=" w-50 mx-auto mt-3" [formGroup]="userCredentials" (ngSubmit)="onSubmitUser()" #ref="ngForm">
+  
+      <div class="mb-2">
+        <input  type="radio" class="mr-1" formControlName="loginType"  id="user" value="user">
+        <label for="user" class="text-dark mr-3">User</label>
+    
+        <input type="radio" class="mr-1" formControlName="loginType"  id="admin" value="admin">
+        <label for="admin" class="text-dark">Admin</label>
+      </div>
+    
+  
+      <div class="mb-2">
+        <label for="email" class="form-label h5 text-dark">Email</label>
+        <input type="text" formControlName="email" id="email" class="form-control">
+        <div *ngIf="email?.invalid &&(email?.dirty||email?.touched||ref.submitted)">
+          <p *ngIf="email?.errors?.['required']" class="text-dark ">email is required</p>
+          <p *ngIf="email?.errors?.['minlength']" class="text-dark ">MinLength is 4</p>
+          <p *ngIf="email?.errors?.['maxlength']" class="text-dark ">MaxLength is 6</p>
+        </div>
+      
+      <div class="mb-2">
+        <label for="password" class="form-label h5 text-dark">Password</label>
+        <input type="password" formControlName="password" id="password" class="form-control">
+        <div *ngIf="password?.invalid &&(password?.dirty||password?.touched||ref.submitted)">
+          <p *ngIf="password?.errors?.['required']" class="text-dark">Password is required</p>
+        </div>
+      </div>
+  
+      <button class="btn mt-2 d-block mx-auto mt-3 mb-4">Login</button>
+      <p class="text-center  text-dark h6">Don't have an account?<a class="register" routerLink="/register">Register</a></p>
+    </div>
+    </form>
+</div>

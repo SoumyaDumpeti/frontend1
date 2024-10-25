@@ -1,0 +1,142 @@
+.container{
+    margin-top: 20px;
+    margin-bottom: 4px;
+    margin-left: 5px;
+}
+p{
+    background: -webkit-linear-gradient(black,#29d4b7);
+    -webkit-background-clip: text;
+    background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button{
+    color: black;
+    background-color:white;
+    border: 2px solid #29d4b7;
+    border-radius: 3px;
+    max-width: fit-content;
+    padding: 10px;
+    
+}
+
+button:hover{
+    background-color: #29d4b7;
+    border-color: black;
+
+
+}
+
+.book{
+    color: black;
+    background-color:white;
+    border: 2px solid #29d4b7;
+    border-radius: 3px;
+    max-width: fit-content;
+    padding: 10px;
+    margin-left: 100px;
+}
+
+.book:hover{
+    background-color: #29d4b7;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+
+.update-btn {
+
+    padding: 10px 20px;
+  
+    cursor: pointer;
+    color: black;
+    background-color:white;
+    border: 2px solid #29d4b7;
+    border-radius: 3px;
+    max-width: fit-content;
+    padding: 10px;
+    
+  }
+  
+  /* Popup container - hidden by default */
+  
+  .popup {
+  
+    position: fixed;
+  
+    top: 0;
+  
+    left: 0;
+  
+    width: 100%;
+  
+    height: 100%;
+  
+    background-color: rgba(0, 0, 0, 0.5);
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+  }
+  
+ 
+  
+  .popup-content {
+  
+    background-color: white;
+  
+    padding: 20px;
+  
+    border-radius: 10px;
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    width: 300px;
+  
+    text-align: center;
+  
+  }
+  
+  /* Close button */
+  
+  .close-btn {
+  
+    background-color: red;
+  
+    color: white;
+  
+    border: none;
+  
+    padding: 5px 10px;
+  
+    margin-top: 10px;
+  
+    cursor: pointer;
+  
+    border-radius: 5px;
+  
+  }
+  
+  /* Submit button */
+  
+  .submit-btn {
+  
+    background-color: green;
+  
+    color: white;
+  
+    border: none;
+  
+    padding: 5px 10px;
+  
+    margin-top: 10px;
+  
+    cursor: pointer;
+  
+    border-radius: 5px;
+  
+  }

@@ -1,0 +1,8 @@
+body {
+    padding-bottom: 80px; /* Adjust this value to match your footer height */
+    margin: 0; /* Remove default margin */
+}
+
+.main-content {
+    padding-bottom: 80px; /* Alternative: use this for a specific content class */
+}

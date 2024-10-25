@@ -1,0 +1,66 @@
+<div class="fluid-container card mx-auto" style="width: 40rem;height:50rem; ">
+    <div *ngIf="duplicateUserStatus === true">
+        <p class="text-white fs-2 text-center">User already existed</p>
+    </div>
+    <div *ngIf="duplicateAdminStatus === true">
+        <p class="text-white fs-2 text-center">Author already existed</p>
+    </div>
+
+    <p class="display-6 text-center text-dark" style="font-weight: 600;">REGISTER</p>
+
+    <div class="container">
+        <form class="w-50 mx-auto" [formGroup]="registerForm" (ngSubmit)="onSubmit()" #ref="ngForm">
+            <div class="mb-3">
+                <div class="form-check form-check-inline">
+                    <input type="radio" formControlName="registerType" id="user" value="user" class="form-check-input">
+                    <label for="user" class="form-check-label text-info">User</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" formControlName="registerType" id="admin" value="admin" class="form-check-input">
+                    <label for="admin" class="form-check-label text-info">Admin</label>
+                </div>
+            </div>
+
+            <div class="mb-3" *ngIf="registerForm.get('registerType').value === 'user'">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" class="form-control" formControlName="firstName">
+            </div>
+
+            <div class="mb-3" *ngIf="registerForm.get('registerType').value === 'user'">
+                <label for="loginId" class="form-label">Login Id</label>
+                <input type="text" id="loginId" class="form-control" formControlName="loginId">
+            </div>
+
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Name</label>
+                <input type="text" id="lastName" class="form-control" formControlName="lastName">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" id="email" class="form-control" formControlName="email">
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" formControlName="password">
+            </div>
+
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched || ref.submitted)">
+                <p *ngIf="password?.errors?.['required']" class="text-danger">Password is required</p>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmPwd" class="form-label">Confirm Password</label>
+                <input type="password" id="confirmPwd" class="form-control" formControlName="confirmPwd">
+            </div>
+
+            <div class="mb-3" *ngIf="registerForm.get('registerType').value === 'user'">
+                <label for="contactNum" class="form-label">Contact Number</label>
+                <input type="text" id="contactNum" class="form-control" formControlName="contactNum">
+            </div>
+
+            <button type="submit" class="btn  d-block mx-auto">Register</button>
+        </form>
+    </div>
+</div>

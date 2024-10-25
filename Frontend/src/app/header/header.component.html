@@ -1,0 +1,35 @@
+<ul class="nav fixed-top navbar-expand-sm justify-content-end p-2 mb-5">
+    @if(status===false){
+    <li class="nav-item">
+      <a class="nav-link  " aria-current="page" routerLinkActive="Active" routerLink="movies">MOVIES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLinkActive="Active" routerLink="register">REGISTER</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLinkActive="Active" routerLink="login">LOGIN</a>
+    </li>
+    }
+    @else{
+
+      @if(!isUser){
+        <li class="nav-item">
+          <a class="nav-link " routerLinkActive="Active" routerLink="addMovie"
+            >ADD MOVIE</a>
+        </li>
+      }
+
+    <li class="nav-item">
+      <a class="nav-link " routerLinkActive="Active" routerLink="movies"
+        >MOVIES</a>
+    </li>
+
+
+
+  
+    <li class="nav-item">
+      <a class="nav-link " routerLinkActive="Active" routerLink="login"
+        (click)="userLogout()">LOGOUT</a>
+    </li>
+  
+    }

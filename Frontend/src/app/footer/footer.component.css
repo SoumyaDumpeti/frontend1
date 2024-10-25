@@ -1,0 +1,39 @@
+.footer {
+    background-color: #8d0baa; /* Dark background */
+    position: fixed; /* Fix the footer */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}
+
+.footer a {
+    text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer .list-inline-item {
+    margin: 0 10px; /* Space between links */
+}
+
+.footer p {
+    margin-bottom: 0; /* No margin below paragraph */
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+    .footer {
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+body {
+    padding-bottom: 80px; /* Adjust this value to match your footer height */
+    margin: 0; /* Remove default margin */
+}
+
+.main-content {
+    padding-bottom: 80px; /* Alternative: use this for a specific content class */
+}

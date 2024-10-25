@@ -1,0 +1,72 @@
+.fluid-container {
+    padding: 40px 20px; /* Padding for the container */
+    border-radius: 8px; /* Rounded corners */
+    height: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.display-1 {
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.text-danger {
+    font-size: 1.2rem; /* Slightly larger error message */
+}
+
+.form-label {
+    font-weight: 600; /* Bold labels */
+    
+}
+
+.form-control {
+    border-radius: 4px; /* Rounded corners for inputs */
+    border-color: #29d4b7;
+    border: 1px solid #ced4da; /* Light border color */
+    transition: border-color 0.3s;
+    
+}
+
+.card{
+    margin-top: 100px;
+    margin-left: 460px;
+    border: #29d4b7 3px solid;
+    border-radius: 5px ;
+    box-shadow:0.0.0.3rem #1cb198;
+}
+
+.form-control:focus {
+    border-color: #29d4b7; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.151); /* Focus shadow */
+}
+
+.text-dark {
+    margin-top: 5px; /* Space above warning messages */
+}
+
+.btn-success {
+    background-color: #08866b; /* Button color */
+    border: none; /* Remove default border */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+button{
+    border-color: black;
+
+}
+.register{
+    color: #29d4b7;
+    text-decoration: underline; 
+}
+
+button:hover{
+    background-color: #29d4b7;
+    border-color: black;
+}
+
+.register:hover { 
+    color: black; 
+}

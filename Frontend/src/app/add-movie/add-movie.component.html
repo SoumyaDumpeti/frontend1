@@ -1,0 +1,95 @@
+<div class="container">
+    <h3 class="mt-5" style="color:black"> Hi , Welcome {{user}}</h3>
+  
+  </div>
+  
+  
+  <div class="lead container">
+  
+    <form class="mx-auto" [formGroup]="movie" (ngSubmit)="submit()" #ref="ngForm">
+  
+  
+  
+      <div class="mb-3">
+        <label for="image" class="form-label">image</label>
+        <input type="img" id="image" class="form-control" formControlName="image">
+  
+      </div>
+  
+      <div *ngIf="image?.invalid && (image?.dirty || image?.touched || ref.submitted)">
+        <p *ngIf="image?.errors?.['required'] " class="text-danger">Image is required</p>
+  
+      </div>
+      <div class="mb-3">
+        <label for="movieName" class="form-label">Movie Name</label>
+        <input type="text" id="movieName" class="form-control" formControlName="movieName">
+  
+      </div>
+  
+      <div *ngIf="movieName?.invalid && (movieName?.dirty || movieName?.touched || ref.submitted)">
+        <p *ngIf="movieName?.errors?.['required'] " class="text-danger">Movie Name is required</p>
+  
+      </div>
+  
+  
+  
+      <div class="mb-3">
+        <label for="theatreName" class="form-label">Theatre Name</label>
+        <input type="text" id="theatreName" class="form-control" formControlName="theatreName">
+  
+      </div>
+  
+      <div *ngIf="theatreName?.invalid && (theatreName.dirty || theatreName.touched || ref.submitted)">
+        <p *ngIf="theatreName.errors?.['required']" class="text-danger">Theatre Name is required</p>
+  
+      </div>
+  
+  
+  
+      <div class="mb-3">
+        <label for="totalTickets" class="form-label">Total Tickets</label>
+        <input type="number" id="totalTickets" class="form-control" formControlName="totalTickets">
+  
+      </div>
+  
+      <div *ngIf="totalTickets?.invalid && (totalTickets?.dirty || totalTickets?.touched || ref.submitted)">
+        <p *ngIf="totalTickets?.errors?.['required']" class="text-danger">Total Tickets are required</p>
+  
+      </div>
+
+      <!-- <div class="mb-3">
+        <label for="availableTickets" class="form-label">Available Tickets</label>
+        <input type="number" id="availableTickets" class="form-control" formControlName="availableTickets">
+  
+      </div>
+  
+      <div *ngIf="availableTickets?.invalid && (availableTickets?.dirty || availableTickets?.touched || ref.submitted)">
+        <p *ngIf="availableTickets?.errors?.['required']" class="text-danger">Available Tickets are required</p>
+  
+      </div> -->
+  
+  
+      <div class="mb-3">
+        <label for="price" class="form-label">price</label>
+        <input type="number" id="price" class="form-control" formControlName="price">
+  
+      </div>
+  
+      <div class="mb-3">
+        <label for="status" class="form-label">status</label>
+        <select id="status" class="form-control" formControlName="status">
+          <option>BOOK ASAP</option>
+          <option>SOLD OUT</option>
+        </select>
+      </div>
+  
+      <div *ngIf="status?.invalid && (status?.dirty || status?.touched || ref.submitted)">
+        <p *ngIf="status?.errors?.['required']" class="text-danger">status is required</p>
+  
+      </div>
+  
+  
+      <button class="btn btn-success">ADD</button>
+  
+  
+    </form>
